@@ -357,6 +357,8 @@ import CoreBluetooth
                     // This should never happen...
                     logger.e(error!)
                 }
+            } else if (resetting) {
+                delegate?.didDeviceDisconnect()
             } else {
                 // This should never happen...
                 logger.d("[Callback] Central Manager did disconnect peripheral without error")
